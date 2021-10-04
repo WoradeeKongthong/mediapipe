@@ -12,7 +12,6 @@ cap = cv2.VideoCapture('data/people.mp4')
 while cap.isOpened():
     check, img = cap.read()
     if check :
-        img = cv2.resize(img, (int(img.shape[1]/5), int(img.shape[0]/5)))
         
         # face detection
         with mpFaceDetection.FaceDetection(model_selection=1, min_detection_confidence=0.5) as detector :
