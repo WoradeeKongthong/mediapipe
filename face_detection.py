@@ -7,6 +7,9 @@ import cv2
 # create face detector
 mpFaceDetection = mp.solutions.face_detection
 
+# list index and landmarks
+landmark_name_list = list(mpFaceDetection.FaceKeyPoint)
+
 # create drawer
 mpDrawer = mp.solutions.drawing_utils
 
@@ -43,4 +46,8 @@ with mpFaceDetection.FaceDetection(
 cv2.imshow("press q to exit", annotated_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-        
+
+# print elements
+print(mpFaceDetection.get_key_point(detection, mpFaceDetection.FaceKeyPoint.NOSE_TIP))
+            
+            

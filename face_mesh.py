@@ -38,7 +38,7 @@ with mp_face_mesh.FaceMesh(
               image=img,
               landmark_list=face_landmarks,
               connections=mp_face_mesh.FACEMESH_TESSELATION, #FACEMESH_CONTOURS, FACEMESH_TESSELATION
-              landmark_drawing_spec=drawing_spec, #None, drawing_spec
+              landmark_drawing_spec=None, #None, drawing_spec
               connection_drawing_spec=mp_drawing_styles
               .get_default_face_mesh_tesselation_style())
 
@@ -46,7 +46,7 @@ with mp_face_mesh.FaceMesh(
 # for id,lm in enumerate(landmarks) :
 #     cv2.circle(img, (lm[0], lm[1]), 2, (0,255,0), -1)
 #     cv2.putText(img, str(id), (lm[0],lm[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.25, (0,0,255),1)
-    
+
 cv2.imshow("result", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
